@@ -5,7 +5,7 @@ const client = new Client({
   database: "lrs",
   password: "hLNyXAdpuD9ZTww8KbkkzpraCZDI3Cnw",
   port: 5432,
-  ssl: true
+  ssl: true,
 });
 client.connect();
 /*const query = {
@@ -20,6 +20,5 @@ client
   .catch((e) => console.error(e.stack));*/
   client.query("SELECT NOW()", (err, res) => {
   console.log(err, res);
-  //client.end();
-  client.on('drain', client.end.bind(client));
+  client.end();
 });
