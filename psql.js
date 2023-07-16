@@ -20,5 +20,6 @@ client
   .catch((e) => console.error(e.stack));*/
   client.query("SELECT NOW()", (err, res) => {
   console.log(err, res);
-  client.end();
+  //client.end();
+  client.on('drain', client.end.bind(client));
 });
