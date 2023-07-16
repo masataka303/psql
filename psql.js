@@ -5,6 +5,7 @@ const client = new Client({
   database: "lrs",
   password: "hLNyXAdpuD9ZTww8KbkkzpraCZDI3Cnw",
   port: 5432,
+  ssl: true
 });
 client.connect();
 /*const query = {
